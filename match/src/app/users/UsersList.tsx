@@ -2,8 +2,11 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { FaEllipsisVertical } from "react-icons/fa6";
+import { FaEllipsisVertical, FaLocationDot } from "react-icons/fa6";
 import { HiOutlineEllipsisVertical } from "react-icons/hi2";
+import TableDesktop from "../components/TableDesktop";
+import { IoLocate } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 
 type User = {
   id: number;
@@ -81,49 +84,42 @@ export default function UsersList() {
       {/* Lista */}
       {filteredUsers.length > 0 ? (
         <div className="flex flex-col items-center gap-4 justify-center ">
-          <>
-            <table className="min-w-full border truncate border-neutral-100 dark:bg-neutral-200 bg-neutral-200/10  dark:border-neutral-200 text-white dark:text-neutral-500 rounded-xl overflow-hidden">
-              <thead className="bg-neutral-900/70  border-b  dark:border-neutral-200 border-neutral-700 dark:bg-neutral-100 min-w-full">
-                <tr>
-                  <th className="px-6 py-5 text-left  font-semibold">
-                    Profile
-                  </th>
-                  <th className="px-6 py-5 text-left  font-semibold">Nome</th>
-                  <th className="px-6 py-5 text-left  font-semibold">Email</th>
-                  <th className="px-6 py-5 text-left  font-semibold">Cidade</th>
-                  <th className="px-6 py-5 text-left  font-semibold">Ações</th>
-                </tr>
-              </thead>
-              <tbody className=" bg-neutral-900/70 dark:bg-neutral-50">
-                {filteredUsers.map((user) => (
-                  <tr className="hover:bg-neutral-800/90 dark:hover:bg-neutral-100  border-b border-neutral-700 dark:border-neutral-200 transition-colors">
-                    <td className="px-6 py-4 hover:text-pink-400">
-                      <img
-                        className="w-10 h-10 object-cover rounded-full"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfaDkQdhg6yji1yDOvvgoizD_Z97VaoJ3hKg&s"
-                        alt=""
-                      />
-                    </td>
-                    <td className="px-6 py-4 hover:text-purple-400 dark:hover:text-purple-600 ">
-                      {user.name}
-                    </td>
-                    <td className="px-6 py-4 hover:text-purple-400 dark:hover:text-purple-600 ">
-                      {user.email}
-                    </td>
-                    <td className="px-6 py-4 hover:text-purple-400 dark:hover:text-purple-600 ">
-                      {user.address.city}
-                    </td>
-                    <td className="px-6 py-4  text-center cursor-pointer">
-                      <div className="w-8  h-8    hover:bg-white/80 dark:hover:bg-neutral-800/80  hover:text-neutral-800 dark:hover:text-white  rounded-md flex items-center justify-center">
-                        <HiOutlineEllipsisVertical className="text-lg " />
+          <TableDesktop filteredUsers={filteredUsers} />
+          <div className="lg:hidden w-full flex flex-col gap-4">
+            {filteredUsers.map((user) => (
+              <>
+                <div className="flex rounded-xl bg-neutral-800 dark:bg-neutral-100 dark:shadow  p-4">
+                  <div className="flex gap-4 items-center ">
+                    <img
+                      className="w-12 h-12 object-cover rounded-full"
+                      src="./user-placeholder.png"
+                      alt=""
+                    />
+                    <div className="text-neutral-400 dark:text-neutral-500 text-sm flex flex-col gap-0.5">
+                      <h2 className="font-bold text-base dark:text-neutral-700 text-white">
+                        {user.name}{" "}
+                      </h2>
+                      <div className="flex items-center gap-1 max-w-[200px]">
+                        <MdEmail className="flex-shrink-0" />
+                        <span className="truncate overflow-hidden whitespace-nowrap">
+                          {user.email}
+                        </span>
                       </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <p className="text-right w-full mr-20">Exibindo 3 de 3 usuários</p>
-          </>
+                      <div className="flex items-center gap-1 max-w-[200px]">
+                        <FaLocationDot className="flex-shrink-0" />
+                        <span className="truncate overflow-hidden whitespace-nowrap">
+                          {user.address.city}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className=" text-rose-500 ml-auto rounded-md flex items-center justify-center">
+                    <HiOutlineEllipsisVertical className="text-3xl " />
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
         </div>
       ) : (
         <p className="text-center text-zinc-400">Nenhum usuário encontrado.</p>
