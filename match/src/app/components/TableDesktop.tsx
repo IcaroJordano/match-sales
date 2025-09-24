@@ -1,4 +1,5 @@
 import { HiOutlineEllipsisVertical } from "react-icons/hi2";
+import ActionMenu from "./ActionMenu";
 
 type User = {
   id: number;
@@ -37,10 +38,13 @@ const TableDesktop = ({ filteredUsers }: any) => {
               <td className="px-6 py-4 hover:text-rose-400  ">
                 {user.address.city}
               </td>
-              <td className="px-6 py-4  text-center cursor-pointer">
+              {/* <td className="px-6 py-4  text-center cursor-pointer">
                 <div className="w-8  h-8    hover:text-rose-400   rounded-md flex items-center justify-center">
                   <HiOutlineEllipsisVertical className="text-4xl " />
                 </div>
+              </td> */}
+              <td className="px-6 py-4 text-center">
+                <ActionMenu />
               </td>
             </tr>
           ))}

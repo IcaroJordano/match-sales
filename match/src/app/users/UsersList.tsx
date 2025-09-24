@@ -11,6 +11,7 @@ import TableSkeleton from "../components/TableSkeleton";
 import ErrorPage from "../components/ErrorPage";
 import CreateUser from "./CreateUser";
 import { BiSearch } from "react-icons/bi";
+import ActionMenu from "../components/ActionMenu";
 
 type User = {
   id: number;
@@ -112,8 +113,8 @@ export default function UsersList() {
                       </div>
                     </div>
                   </div>
-                  <div className=" text-rose-500 dark:text-neutral-800 ml-auto rounded-md flex items-center justify-center">
-                    <HiOutlineEllipsisVertical className="text-3xl " />
+                  <div className="ml-auto">
+                    <ActionMenu />
                   </div>
                 </div>
               </>
