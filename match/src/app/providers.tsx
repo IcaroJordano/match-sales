@@ -5,7 +5,14 @@ import { ReactNode, useState } from "react";
 import { ThemeProvider } from "next-themes";
 
 export default function Providers({ children }: { children: ReactNode }) {
-  const [queryClient] = useState(() => new QueryClient());
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 10 * 60 * 1000, // 10 minutos
+        gcTime: 10 * 60 * 1000, // 10 minutos — tempo para “coleta de lixo”
+      },
+    },
+  });
 
   return (
     <QueryClientProvider client={queryClient}>

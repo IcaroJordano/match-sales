@@ -7,6 +7,10 @@ import { HiOutlineEllipsisVertical } from "react-icons/hi2";
 import TableDesktop from "../components/TableDesktop";
 import { IoLocate } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+import TableSkeleton from "../components/TableSkeleton";
+import ErrorPage from "../components/ErrorPage";
+import CreateUser from "./CreateUser";
+import { BiSearch } from "react-icons/bi";
 
 type User = {
   id: number;
@@ -42,44 +46,39 @@ export default function UsersList() {
   // 🔹 LOADING
   if (isLoading) {
     return (
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="h-28 animate-pulse rounded-xl bg-zinc-800" />
-        ))}
-      </div>
+      <>
+        <TableSkeleton />
+        <div className="lg:hidden grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div
+              key={i}
+              className="h-28 animate-pulse rounded-xl bg-zinc-800"
+            />
+          ))}
+        </div>
+      </>
     );
   }
 
   // 🔹 ERRO
   if (isError) {
-    return (
-      <div className="text-center">
-        <p className="mb-2 text-red-500">
-          Ocorreu um erro: {(error as Error).message}
-        </p>
-        <button
-          onClick={() => refetch()}
-          className="rounded-lg bg-violet-600 px-4 py-2 text-white hover:bg-violet-700"
-        >
-          Tentar novamente
-        </button>
-      </div>
-    );
+    return <ErrorPage onRetry={refetch} />;
   }
 
   // 🔹 SUCESSO
   return (
     <div className="space-y-6 transition-all duration-500 ">
       {/* Search */}
-      {/* <div className="flex w-full max-w-sm">
+      <div className="w-full border max-w-sm px-3  border-zinc-700 dark:bg-neutral-50 dark:border-neutral-200 dark:text-black bg-zinc-900 rounded-lg flex items-center">
+        <BiSearch />
         <input
           type="text"
           placeholder="Buscar por nome..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-white placeholder-zinc-500 focus:border-violet-600 focus:outline-none"
+          className="w-full rounded-lg border-zinc-700 dark:bg-neutral-50 dark:border-neutral-200 dark:text-black bg-zinc-900 px-3 py-2 text-white placeholder-zinc-500  focus:outline-none"
         />
-      </div> */}
+      </div>
 
       {/* Lista */}
       {filteredUsers.length > 0 ? (
@@ -113,7 +112,7 @@ export default function UsersList() {
                       </div>
                     </div>
                   </div>
-                  <div className=" text-rose-500 ml-auto rounded-md flex items-center justify-center">
+                  <div className=" text-rose-500 dark:text-neutral-800 ml-auto rounded-md flex items-center justify-center">
                     <HiOutlineEllipsisVertical className="text-3xl " />
                   </div>
                 </div>

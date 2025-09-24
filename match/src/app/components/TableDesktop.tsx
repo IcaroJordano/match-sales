@@ -11,7 +11,7 @@ type User = {
 
 const TableDesktop = ({ filteredUsers }: any) => {
   return (
-    <div className="w-full hidden md:block">
+    <div className="w-full hidden lg:block">
       <table className=" min-w-full border truncate border-neutral-100 dark:bg-neutral-200 bg-neutral-200/10  dark:border-neutral-200 text-white dark:text-neutral-500 rounded-xl overflow-hidden">
         <thead className="bg-neutral-900/70  border-b  dark:border-neutral-200 border-neutral-700 dark:bg-neutral-50 min-w-full">
           <tr>
