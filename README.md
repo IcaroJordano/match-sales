@@ -1,4 +1,5 @@
 ![tecnical-test](https://github.com/user-attachments/assets/800b6db0-76c0-4b91-a76f-3e8e8b6cb9b3)
+
 # 🧪 Desafio Técnico - Desenvolvedor Front-end Júnior
 
 Bem-vindo(a) ao nosso teste técnico! Este desafio tem como objetivo avaliar suas habilidades práticas com **React + Next.js + React Query + Tailwind + React Hook Form + Zod + ShadcnUI**.
@@ -6,11 +7,13 @@ Bem-vindo(a) ao nosso teste técnico! Este desafio tem como objetivo avaliar sua
 ---
 
 ## 🎯 Objetivo
+
 Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma API externa, com boas práticas de código, organização visual e simulação de fluxos completos de CRUD.
 
 ---
 
 ## 🛠️ Stack Tecnológica Obrigatória
+
 - **Next.js** (versão 13+ com App Router)
 - **React Query (TanStack Query)** - para consumo e gerenciamento de APIs
 - **React Hook Form** - para gerenciamento de formulários
@@ -21,12 +24,15 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 ---
 
 ## 📦 Configuração Inicial
+
 1. Crie um novo projeto Next.js:
+
    ```bash
    npx create-next-app@latest meu-projeto --typescript --tailwind --eslint --app
    ```
 
 2. Instale as dependências obrigatórias:
+
    ```bash
    npm install @tanstack/react-query react-hook-form zod @hookform/resolvers
    ```
@@ -41,6 +47,7 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 ## 📋 O que você deve fazer
 
 ### 1. 🔍 **Listagem de Usuários** (`/users`)
+
 - Buscar os usuários da API: [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
 - Exibir em cards ou tabela as informações:
   - **Nome**
@@ -51,6 +58,7 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 - Adicionar funcionalidade de **busca/filtro por nome**
 
 ### 2. ➕ **Formulário de Novo Usuário**
+
 - Botão "**Novo usuário**" que abre um **modal** ou redireciona para `/users/new`
 - Formulário com os campos:
   - **Nome** (obrigatório, mínimo 2 caracteres)
@@ -63,12 +71,13 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 - Ao enviar:
   - Simular criação usando `queryClient.setQueryData` para atualizar a lista
   - Feedback visual de sucesso/erro
-  
+
 ---
 
 ## 🎨 **Requisitos de UI/UX**
 
 ### Estilização
+
 - **Tailwind CSS** para layout e componentes
 - Interface **responsiva** (mobile, tablet, desktop)
 - Design **acessível** e **consistente**
@@ -77,6 +86,7 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 ---
 
 ## 💡 **Extras Opcionais** (para ir além)
+
 - ✏️ **Editar usuário existente** (modal ou página separada)
 - 🗑️ **Excluir usuário** com confirmação
 - 📊 **Gráficos ou estatísticas** no dashboard
@@ -86,6 +96,7 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 ---
 
 ## 📂 **Entrega**
+
 1. **Repositório GitHub público** com todo o código
 2. **README.md completo** incluindo:
    - Instruções para rodar localmente (`npm install`, `npm run dev`)
@@ -98,6 +109,7 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 ---
 
 ## 💡 **Dicas Importantes**
+
 - ✅ **Qualidade > Quantidade** - prefira fazer bem feito
 - 📝 **Documente decisões** técnicas no README
 - 🔄 **Use commits descritivos** e frequentes
@@ -109,4 +121,4 @@ Criar uma interface de **listagem e gerenciamento de usuários**, consumindo uma
 
 **Boa sorte! 🚀**
 
-*Se tiver dúvidas de escopo, é melhor perguntar do que assumir - valorizamos a clareza!*
+_Se tiver dúvidas de escopo, é melhor perguntar do que assumir - valorizamos a clareza!_
