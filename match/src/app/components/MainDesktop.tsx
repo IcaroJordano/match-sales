@@ -1,22 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { BiMenu } from "react-icons/bi";
-import { CiMenuFries, CiUser } from "react-icons/ci";
-import { FaLock, FaRegUser, FaSun, FaUser } from "react-icons/fa";
-import { GiPadlockOpen } from "react-icons/gi";
-import { GoGraph } from "react-icons/go";
-import { IoIosSettings } from "react-icons/io";
-import { LuLayoutDashboard, LuUserRound } from "react-icons/lu";
-import { MdDarkMode, MdOutlineSecurity } from "react-icons/md";
-import { RiMenu2Line } from "react-icons/ri";
-import { SiAuth0 } from "react-icons/si";
-import { useTheme } from "../hooks/useTheme";
 import Header from "./Header";
 import MenuDesktop from "./MenuDesktop";
 import Menu from "./Menu";
 
-const MainDesktop = ({ children }: any) => {
+const MainDesktop = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

@@ -16,6 +16,16 @@ const createUserSchema = z.object({
 
 type CreateUserFormData = z.infer<typeof createUserSchema>;
 
+import { QueryClient } from "@tanstack/react-query";
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  address: {
+    city: string;
+  };
+}
 export default function CreateUser({
   isOpen,
   setIsOpen,
@@ -41,7 +51,7 @@ export default function CreateUser({
     await new Promise((r) => setTimeout(r, 1000));
 
     // Atualiza a lista de usuários localmente
-    queryClient.setQueryData(["users"], (oldData: any) => [
+    queryClient.setQueryData<User[]>(["users"], (oldData) => [
       ...(oldData || []),
       {
         id: Date.now(),

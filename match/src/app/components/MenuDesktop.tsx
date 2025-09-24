@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BiHome } from "react-icons/bi";
 import { FaLock } from "react-icons/fa";
 import { GoGraph, GoHomeFill } from "react-icons/go";
 import { IoIosSettings } from "react-icons/io";

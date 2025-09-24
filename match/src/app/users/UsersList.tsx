@@ -2,16 +2,14 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { FaEllipsisVertical, FaLocationDot } from "react-icons/fa6";
-import { HiOutlineEllipsisVertical } from "react-icons/hi2";
+import { FaLocationDot } from "react-icons/fa6";
 import TableDesktop from "../components/TableDesktop";
-import { IoLocate } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import TableSkeleton from "../components/TableSkeleton";
 import ErrorPage from "../components/ErrorPage";
-import CreateUser from "./CreateUser";
 import { BiSearch } from "react-icons/bi";
 import ActionMenu from "../components/ActionMenu";
+import Image from "next/image";
 
 type User = {
   id: number;
@@ -86,38 +84,41 @@ export default function UsersList() {
         <div className="flex flex-col items-center gap-4 justify-center ">
           <TableDesktop filteredUsers={filteredUsers} />
           <div className="lg:hidden w-full flex flex-col gap-4">
-            {filteredUsers.map((user) => (
-              <>
-                <div className="flex rounded-xl bg-neutral-800 dark:bg-neutral-100 dark:shadow  p-4">
-                  <div className="flex gap-4 items-center ">
-                    <img
-                      className="w-12 h-12 object-cover rounded-full"
-                      src="./user-placeholder.png"
-                      alt=""
-                    />
-                    <div className="text-neutral-400 dark:text-neutral-500 text-sm flex flex-col gap-0.5">
-                      <h2 className="font-bold text-base dark:text-neutral-700 text-white">
-                        {user.name}{" "}
-                      </h2>
-                      <div className="flex items-center gap-1 max-w-[200px]">
-                        <MdEmail className="flex-shrink-0" />
-                        <span className="truncate overflow-hidden whitespace-nowrap">
-                          {user.email}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1 max-w-[200px]">
-                        <FaLocationDot className="flex-shrink-0" />
-                        <span className="truncate overflow-hidden whitespace-nowrap">
-                          {user.address.city}
-                        </span>
-                      </div>
+            {filteredUsers.map((user: User) => (
+              <div
+                key={user.id}
+                className="flex rounded-xl bg-neutral-800 dark:bg-neutral-100 dark:shadow p-4"
+              >
+                <div className="flex gap-4 items-center ">
+                  <Image
+                    className="w-12 h-12 object-cover rounded-full"
+                    src="/user-placeholder.png"
+                    alt={`Foto de perfil de ${user.name}`}
+                    width={48}
+                    height={48}
+                  />
+                  <div className="text-neutral-400 dark:text-neutral-500 text-sm flex flex-col gap-0.5">
+                    <h2 className="font-bold text-base dark:text-neutral-700 text-white">
+                      {user.name}
+                    </h2>
+                    <div className="flex items-center gap-1 max-w-[200px]">
+                      <MdEmail className="flex-shrink-0" />
+                      <span className="truncate overflow-hidden whitespace-nowrap">
+                        {user.email}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1 max-w-[200px]">
+                      <FaLocationDot className="flex-shrink-0" />
+                      <span className="truncate overflow-hidden whitespace-nowrap">
+                        {user.address.city}
+                      </span>
                     </div>
                   </div>
-                  <div className="ml-auto">
-                    <ActionMenu />
-                  </div>
                 </div>
-              </>
+                <div className="ml-auto">
+                  <ActionMenu />
+                </div>
+              </div>
             ))}
           </div>
         </div>
