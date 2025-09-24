@@ -27,7 +27,7 @@ Três estados de listagem:
 - ❌ Erro: mensagem amigável e botão de retry.
 - ✅ Success: renderização em cards/tabela.
 
-![Imagem da tabela + cards](placeholder_tabela_cards.png)
+
 
 ---
 
@@ -39,7 +39,6 @@ Filtra os usuários pelo nome em tempo real.
 
 Desenvolvido com controlled component do React.
 
-![Imagem do campo de busca funcionando](placeholder_campo_busca.png)
 
 ---
 
@@ -62,8 +61,6 @@ Implementação:
 - Cadastro simulado com `queryClient.setQueryData`
 - Feedback de sucesso/erro exibido ao usuário
 
-![Imagem do modal no desktop](placeholder_modal_desktop.png)
-![Imagem do modal no mobile](placeholder_modal_mobile.png)
 
 ---
 
@@ -76,7 +73,6 @@ Ainda não ativos:
 - Exibem feedback visual ao usuário.
 - Mantidos propositalmente como “ações travadas”.
 
-![Imagem dos botões de editar/deletar com feedback](placeholder_botoes_editar_deletar.png)
 
 ---
 
@@ -88,7 +84,6 @@ Possui rotas que exibem ícones de cadeado 🔒 indicando bloqueio.
 
 Feedback visual ao usuário de que ainda não é possível acessar.
 
-![Imagem do mini dashboard](placeholder_mini_dashboard.png)
 
 ---
 
@@ -125,7 +120,6 @@ Segui um padrão básico de componentização.
 
 Algumas partes poderiam ser melhor componentizadas/reutilizadas, mas por limite de tempo optei por priorizar entrega funcional.
 
-![Print do tree de pastas](placeholder_tree_pastas.png)
 
 ---
 
@@ -138,8 +132,6 @@ Exemplo:
 - `feat: adiciona listagem de usuários com react query`
 - `fix: corrige validação de email no formulário`
 - `style: ajusta responsividade mobile do modal`
-
-![Print do log de commits](placeholder_log_commits.png)
 
 ---
 
@@ -158,7 +150,7 @@ Acesse em: `http://localhost:3000`
 
 ## 🌐 Deploy
 
-Deploy realizado na Vercel → [inserir link]
+Deploy realizado na Vercel → https://match-sales.vercel.app/
 
 ---
 
@@ -182,5 +174,7 @@ Deploy realizado na Vercel → [inserir link]
 
 ## ✨ Obrigado pela oportunidade!
 Fico à disposição para dúvidas ou ajustes.
+
+
 
 
