@@ -6,7 +6,7 @@ import UsersList from "./UsersList";
 import { BiPlus } from "react-icons/bi";
 
 export default function UsersPage() {
-  const [isOpen, setIsOpne] = useState(true);
+  const [isOpen, setIsOpne] = useState(false);
 
   return (
     <main className="mx-auto max-w-6xl  dark:bg-neutral-100 p-5">

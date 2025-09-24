@@ -38,8 +38,8 @@ const TableDesktop = ({ filteredUsers }: any) => {
                 {user.address.city}
               </td>
               <td className="px-6 py-4  text-center cursor-pointer">
-                <div className="w-8  h-8    hover:bg-white/80 dark:hover:bg-neutral-800/80  hover:text-neutral-800 dark:hover:text-white  rounded-md flex items-center justify-center">
-                  <HiOutlineEllipsisVertical className="text-lg " />
+                <div className="w-8  h-8    hover:text-rose-400   rounded-md flex items-center justify-center">
+                  <HiOutlineEllipsisVertical className="text-4xl " />
                 </div>
               </td>
             </tr>
