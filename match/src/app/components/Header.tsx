@@ -5,7 +5,7 @@ import { MdDarkMode } from "react-icons/md";
 import { RiMenu2Line } from "react-icons/ri";
 import { useTheme } from "../hooks/useTheme";
 
-const Header = ({ setIsOpen, isOpen }: { setIsOpen: any; isOpen: any }) => {
+const Header = ({ setIsOpen, isOpen }: any) => {
   const { theme, setTheme } = useTheme();
   return (
     <header className="border-b py-3 bg-neutral-950/80 lg:bg-neutral-900 dark:bg-neutral-50 dark:lg:bg-neutral-50 lg:py-5 px-5 border-neutral-600 dark:border-neutral-200 flex justify-between">
