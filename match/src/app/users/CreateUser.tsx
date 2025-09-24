@@ -16,8 +16,6 @@ const createUserSchema = z.object({
 
 type CreateUserFormData = z.infer<typeof createUserSchema>;
 
-import { QueryClient } from "@tanstack/react-query";
-
 interface User {
   id: number;
   name: string;

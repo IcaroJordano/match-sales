@@ -29,7 +29,7 @@ async function fetchUsers(): Promise<User[]> {
 }
 
 export default function UsersList() {
-  const { data, error, isLoading, isError, refetch } = useQuery<User[]>({
+  const { data, isLoading, isError, refetch } = useQuery<User[]>({
     queryKey: ["users"],
     queryFn: fetchUsers,
   });
